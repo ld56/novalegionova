@@ -1,0 +1,99 @@
+@use "sass:math";
+@use "sass:meta";
+
+///////////////////////////////////////////////////////////////////////////////////
+
+// Source: https://css-tricks.com/snippets/sass/px-to-em-functions/
+@function rem($pixels, $context: 16) {
+	@return (math.div($pixels, $context)) * 1rem;
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+
+@function fzlh($font-size, $line-height) {
+	$line-height-in-unit: math.div($line-height, $font-size);
+	@return #{$line-height-in-unit};
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+
+@function clamp-from($initial-reso, $initial-value, $final-value, $unit) {
+	$vw: calc($initial-value / ($initial-reso * 0.01));
+	$initial-value-rem: rem($initial-value);
+	$final-value-rem: rem($final-value);
+	@if $unit == 'rem' {
+		@return clamp(#{$initial-value-rem}, #{$vw}vw, #{$final-value-rem}); 
+	} @else if $unit == "px" {
+		@return clamp(#{$initial-value}px, #{$vw}vw, #{$final-value}px); 
+	}
+}
+
+@function clamp-to($final-reso, $initial-value, $final-value, $unit) {
+	$vw: calc($final-value / ($final-reso * 0.01));
+	$initial-value-rem: rem($initial-value);
+	$final-value-rem: rem($final-value);
+	@if $unit == 'rem' {
+		@return clamp(#{$initial-value-rem}, #{$vw}vw, #{$final-value-rem}); 
+	} @else if $unit == "px" {
+		@return clamp(#{$initial-value}px, #{$vw}vw, #{$final-value}px); 
+	}
+}
+
+@function proportion-from($initial-reso, $final-reso, $initial-value, $unit) {
+	$final-value: calc($final-reso * $initial-value / $initial-reso);
+	$vw: calc($initial-value / ($initial-reso * 0.01));
+	$initial-value-rem: rem($initial-value);
+	$final-value-rem: rem($final-value);
+	@if $unit == 'rem' {
+		@return clamp(#{$initial-value-rem}, #{$vw}vw, #{$final-value-rem}); 
+	} @else if $unit == "px" {
+		@return clamp(#{$initial-value}px, #{$vw}vw, #{$final-value}px); 
+	}
+}
+
+@function proportion-to($initial-reso, $final-reso, $final-value, $unit) {
+	$initial-value: calc($initial-reso * $final-value / $final-reso);
+	$vw: calc($final-value / ($final-reso * 0.01));
+	$initial-value-rem: rem($initial-value);
+	$final-value-rem: rem($final-value);
+	@if $unit == 'rem' {
+		@return clamp(#{$initial-value-rem}, #{$vw}vw, #{$final-value-rem}); 
+	} @else if $unit == "px" {
+		@return clamp(#{$initial-value}px, #{$vw}vw, #{$final-value}px); 
+	}
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////
+
+
+@function vw($reso, $desired-font-size) {	
+	$vw: calc( $desired-font-size * 100 / $reso );
+	@return #{$vw}vw;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////
+
+
+@mixin for_mobile_in_pxs($args...) {
+	@each $property, $value, $unit in meta.keywords($args) {
+		#{$property}: #{$value}px;
+	}
+	@media (max-width: 320px) {
+		@each $property, $value in meta.keywords($args) {
+			#{$property}: vw(320, $value);
+		}
+	}
+}
+
+@mixin for_mobile_in_rems($args...) {
+	@each $property, $value, $unit in meta.keywords($args) {
+		#{$property}: rem($value);
+	}
+	@media (max-width: 320px) {
+		@each $property, $value in meta.keywords($args) {
+			#{$property}: vw(320, $value);
+		}
+	}
+}

@@ -1,0 +1,158 @@
+@use 'abstracts' as *;
+@use 'base/variables.scss' as *;
+
+.menu {
+    position: fixed;
+    inset: 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    opacity: 0;
+    transform: translateX(-100%);
+    overflow-y: scroll; 
+    overflow: scroll;
+    background-color: white;
+    // transform: translateX(0%);
+    // opacity: 1;
+
+    @include from-breakpoint(desktop1) {
+        position: relative;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+        padding: 0;
+        border-radius: unset;
+        box-shadow: unset;
+        overflow: visible;
+        transform: translateX(0%);
+        opacity: 1;
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar {
+        display: none; 
+    }
+
+    &--non-visible {
+        animation: menu-close .3s;
+    }
+    
+    &--visible {
+        opacity: 1;
+        transform: translateX(0%);
+        animation: menu-open .3s;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+
+        @include from-breakpoint(desktop1) {
+            width: 100%;
+            padding-left: 20px;
+        }
+    }
+
+    &__topbar {
+        position: sticky;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: $header-mobile;
+        width: 100%;
+        background-color: color('white');
+        z-index: 20;
+        outline: 1px solid red;
+        transition: height .3s ease-out;
+
+        @include from-breakpoint(desktop1) {
+            display: none;
+        }    
+    }
+
+    &__nav {
+        width: 100%;
+        overflow: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        overflow-y: scroll; 
+        z-index: 10;
+        position: relative;
+        
+        &::-webkit-scrollbar {
+            display: none; 
+        }
+
+        @include from-breakpoint(desktop1) {
+            overflow: visible;
+        }
+    }
+    
+    &__ul {
+        list-style-type: none;
+        width: 100%;
+        overflow: hidden;
+
+        @include from-breakpoint(desktop1) {
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            gap: clamp-to(1920, 30, 40, 'px');
+            overflow: visible;
+        }
+    }
+
+    &__li {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        
+        @include from-breakpoint(desktop1) {
+            width: max-content;
+        }
+    }
+
+    &__li.menu__li.current-menu-item,
+    .current_page_parent.menu__li {
+        font-weight: 700;
+    
+        & > .menu__a {
+            color: color('gray');
+        }
+    
+        // @include from-breakpoint(desktop1) {
+        //     &::after {
+        //         content: '';
+        //         position: absolute;
+        //         width: 100%;
+        //         transform: scaleX(1);
+        //         height: 2px;
+        //         bottom: 14px;
+        //         left: 0;
+        //         background: rgb(255,77,244);
+        //         background: linear-gradient(90deg, rgba(255,77,244,1) 0%, rgba(12,90,254,1) 100%);
+        //         transform-origin: bottom right;
+        //         transition: transform .5s cubic-bezier(0.83, 0, 0.17, 1);
+        //     }
+        // }
+    }
+
+    &__a {
+        font-size: rem(26);
+        padding: 20px 40px;
+        text-align: left;
+        text-decoration: none;
+        margin: auto;
+
+        @include from-breakpoint(desktop1) {
+            font-size: rem(16);
+            padding-right: unset;
+            padding-left: unset;
+        }      
+    }
+}

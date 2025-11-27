@@ -1,0 +1,69 @@
+@use 'abstracts' as *;
+@use 'base/variables.scss' as *;
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+    font-family: $poppins;
+    // overflow-x: hidden;
+    // scroll-padding-top: 70px;
+
+    @include from-breakpoint(tablet2) {
+        // scroll-padding-top: clamp-to(1920, 70, 80, 'px');
+    }
+}
+
+body {
+    padding-top: $header-mobile;
+    background-color: #eeeeee;
+    // overflow-x: hidden;
+
+    @include from-breakpoint(desktop1) {
+        padding-top: $header-desktop;
+    }
+}
+
+main {
+    overflow: hidden;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+}
+
+h1, h2, h3, h4, h5, p, a {
+    word-wrap: break-word;
+    margin: 0;
+}
+
+pre {
+    background-color: black;
+    padding: 5px;
+    font-size: rem(10);
+    color: tomato;
+    outline: 2px solid tomato;
+}
+
+input[type="checkbox"] {
+    flex-shrink: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Ukryj strzałki dla przeglądarek opartych na Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}

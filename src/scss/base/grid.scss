@@ -1,0 +1,237 @@
+@use 'abstracts' as *;
+@use "sass:math";
+@use "sass:meta";
+@use "sass:map";
+
+// Liczba kolumn w layoucie
+$grid-columns: 12;
+
+// Odstępy. Domyślnie w pikselach, ale do zmiennej wpisywać bez jednostki.
+$gutter: 30;
+
+// Wyśrodkowania
+$justify: flex-start, flex-end, center, space-between, space-around;
+$align: flex-start, flex-end, center, space-between, space-around;
+
+// Mapa z % wartościami zajęcia layoutu przez konkretne liczby kolumn
+$widths: (12: 100%, 11: 91.6666666667%, 10: 83.3333333333%, 9: 75%, 8: 66.6666666667%, 7: 58.3333333333%, 6: 50%, 5: 41.6666666667%, 4: 33.3333333333%, 3: 25%, 2: 16.6666666667%, 1: 8.3333333333%);
+
+// Szerokość kolumny w layoucie
+$stripe: calc( 100% / $grid-columns );
+
+// ////////////////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////////////////
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    gap: calc($gutter * 2.5) + unquote("px");
+
+    @include from-breakpoint(tablet1) {
+        gap: $gutter + unquote("px");
+    }
+}
+
+.col {
+    width: 100%;
+    flex-grow: 0;
+}
+
+@media (min-width: 0px) {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-m1 {
+            $width: calc( $i * $stripe );
+            $pane: calc(100 / $width);
+            $gaps: $pane - 1;
+            $correction: calc($gutter * $gaps / $pane);
+            width: unquote("calc(") + $width + unquote(" - ") + $correction + unquote("px)");
+        }
+    }
+}
+
+@include from-breakpoint(mobile2) {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-m2 {
+            $width: calc( $i * $stripe );
+            $pane: calc(100 / $width);
+            $gaps: $pane - 1;
+            $correction: calc($gutter * $gaps / $pane);
+            width: unquote("calc(") + $width + unquote(" - ") + $correction + unquote("px)");
+        }
+    }
+    
+}
+
+@include from-breakpoint(tablet1) {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-t1 {
+            $width: calc( $i * $stripe );
+            $pane: calc(100 / $width);
+            $gaps: $pane - 1;
+            $correction: calc($gutter * $gaps / $pane);
+            width: unquote("calc(") + $width + unquote(" - ") + $correction + unquote("px)");
+        }
+    }
+    
+}
+
+@include from-breakpoint(tablet2) {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-t2 {
+            $width: calc( $i * $stripe );
+            $pane: calc(100 / $width);
+            $gaps: $pane - 1;
+            $correction: calc($gutter * $gaps / $pane);
+            width: unquote("calc(") + $width + unquote(" - ") + $correction + unquote("px)");
+        }
+    }
+    
+}
+
+@include from-breakpoint(desktop1) {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-d1 {
+            $width: calc( $i * $stripe );
+            $pane: calc(100 / $width);
+            $gaps: $pane - 1;
+            $correction: calc($gutter * $gaps / $pane);
+            width: unquote("calc(") + $width + unquote(" - ") + $correction + unquote("px)");
+        }
+    }
+    
+}
+
+@include from-breakpoint(desktop2) {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-d2 {
+            $width: calc( $i * $stripe );
+            $pane: calc(100 / $width);
+            $gaps: $pane - 1;
+            $correction: calc($gutter * $gaps / $pane);
+            width: unquote("calc(") + $width + unquote(" - ") + $correction + unquote("px)");
+        }
+    }
+    
+}
+
+// Alignment classes
+
+// @each $val in $justify {
+//     .justify-#{$val} {
+//         justify-content: $val;
+//     }
+
+//     @include from-breakpoint(mobile2) {
+//         .justify-#{$val}-mb {
+//             justify-content: $val;
+//         }
+//     }
+    
+//     @include from-breakpoint(tablet1) {
+//         .justify-#{$val}-t1 {
+//             justify-content: $val;
+//         }
+//     }
+    
+//     @include from-breakpoint(tablet2) {
+//         .justify-#{$val}-t2 {
+//             justify-content: $val;
+//         }
+//     }
+    
+//     @include from-breakpoint(desktop1) {
+//         .justify-#{$val}-ds {
+//             justify-content: $val;
+//         }
+//     }
+// }
+
+// @each $val in $align {
+//     .align-#{$val} {
+//         align-items: $val;
+//     }
+
+//     @include from-breakpoint(mobile2) {
+//         .align-#{$val}-mb {
+//             align-items: $val;
+//         }
+//     }
+    
+//     @include from-breakpoint(tablet1) {
+//         .align-#{$val}-t1 {
+//             align-items: $val;
+//         }
+//     }
+    
+//     @include from-breakpoint(tablet2) {
+//         .align-#{$val}-t2 {
+//             align-items: $val;
+//         }
+//     }
+    
+//     @include from-breakpoint(desktop1) {
+//         .align-#{$val}-ds {
+//             align-items: $val;
+//         }
+//     }
+// }
+
+// Row reverse classes
+
+// .row-reverse {
+//     flex-direction: row-reverse;
+
+//     @include from-breakpoint(mobile2) {
+//         .row-reverse-mb {
+//             flex-direction: row-reverse;
+//         }
+//     }
+    
+//     @include from-breakpoint(tablet1) {
+//         .row-reverse-t1 {
+//             flex-direction: row-reverse;
+//         }
+//     }
+    
+//     @include from-breakpoint(tablet2) {
+//         .row-reverse-t2 {
+//             flex-direction: row-reverse;
+//         }
+//     }
+    
+//     @include from-breakpoint(desktop1) {
+//         .row-reverse-ds {
+//             flex-direction: row-reverse;
+//         }
+//     }
+// }
+
+// .row-normal {
+//     flex-direction: row;
+
+//     @include from-breakpoint(mobile2) {
+//         .row-normal-mb {
+//             flex-direction: row;
+//         }
+//     }
+    
+//     @include from-breakpoint(tablet1) {
+//         .row-normal-t1 {
+//             flex-direction: row;
+//         }
+//     }
+    
+//     @include from-breakpoint(tablet2) {
+//         .row-normal-t2 {
+//             flex-direction: row;
+//         }
+//     }
+    
+//     @include from-breakpoint(desktop1) {
+//         .row-normal-ds {
+//             flex-direction: row;
+//         }
+//     }
+// }

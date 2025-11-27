@@ -1,0 +1,39 @@
+$mobile1: 320px;
+$mobile2: 500px;
+$tablet1: 768px;
+$tablet2: 992px;
+$desktop1: 1280px;
+$desktop2: 1440px;
+$fullhd: 1920px;
+
+// $mini: 20rem;
+// $mobile: 36rem;
+// $tablet: 48rem;
+// $tablet2: 62rem;
+// $desktop: 80rem;
+// $tv: 120rem;
+
+$breakpoints-up: (
+	'mobile2': $mobile2,
+	'tablet1': $tablet1,
+	'tablet2': $tablet2,
+	'desktop1': $desktop1,
+	'desktop2': $desktop2,
+	'fullhd': $fullhd,
+);
+
+$breakpoints-down: (
+	'mobile1': $mobile1,
+);
+
+@mixin from-breakpoint($size) {
+	@media (min-width: map-get($breakpoints-up, $size)) {
+		@content;
+	}
+}
+
+@mixin to-breakpoint($size) {
+	@media (max-width: map-get($breakpoints-down, $size)) {
+		@content;
+	}
+}

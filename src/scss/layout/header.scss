@@ -1,0 +1,64 @@
+@use 'abstracts' as *;
+@use 'base/variables.scss' as *;
+
+.header {
+    position: fixed;
+    top: 0;
+    height: $header-mobile;
+    width: 100%;
+    z-index: 999;
+    transition: transform .4s, background-color .4s;
+    background-color: color('white');
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+    @include from-breakpoint(desktop1) {
+        height: $header-desktop;
+    }
+
+    &__wrapper {
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        display: block;
+        aspect-ratio: 200/120;
+        width: 42px;
+        height: auto;
+
+        @include from-breakpoint(desktop1) {
+            width: clamp-to(1920, 42, 50, 'px');
+        }
+    }
+
+    &__button {
+        height: 60px;
+        width: 60px;
+        position: relative;
+        background-position: 100% 50%;
+        background-repeat: no-repeat;
+        border: none;
+        background-color: unset;
+        flex-shrink: 0;
+        // outline: 1px dashed red;
+        
+        @include from-breakpoint(desktop1) {
+            display: none;
+        }
+
+        &--open {
+            background-image: url('../svg/menu.svg');
+            background-size: 40% 40%;
+            filter: filter('black');
+        }
+
+        &--close {
+            background-image: url('../svg/close.svg');
+            background-size: 35% 35%;
+            filter: filter('black');
+            color: #636363;
+        }
+    }
+}

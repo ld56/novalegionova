@@ -1,0 +1,8 @@
+@use 'abstracts' as *;
+
+// Użyk w innych plikach poniższego odwolania, by użyć poniższych zmiennych:
+// @use 'base/variables.scss' as *;
+
+// PRZYKŁADOWE:
+$header-mobile: 106px;
+$header-desktop: clamp-to(1800, 106, 150, 'px');

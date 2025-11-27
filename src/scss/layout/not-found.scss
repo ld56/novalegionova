@@ -1,0 +1,42 @@
+@use 'abstracts' as *;
+
+.not-found {
+    position: relative;
+    padding: clamp-to(992, 60, 100, 'px') 0;
+    z-index: 6;
+
+    @include from-breakpoint(desktop1) {
+        padding: clamp-to(1920, 100, 140, 'px') 0;
+    }
+
+    &__wrapper {
+        height: 100%;
+    }
+    
+    &__box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        // border: 3px solid red;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+
+        & > * {
+            text-align: center;
+            margin: auto;
+        }
+    }
+
+    &__tagline {
+        margin-bottom: clamp-to(992, 24, 30, 'px');
+    }
+
+    &__text {
+        margin: clamp-to(992, 24, 30, 'px') 0;
+    }
+}

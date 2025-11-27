@@ -1,0 +1,31 @@
+@use 'abstracts' as *;
+
+@keyframes menu-open {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    1% {
+        opacity: 0;
+        transform: translateX(0%);
+    }
+    100%  {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes menu-close {
+    0% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    99% {
+        opacity: 0;
+        transform: translateX(0%);
+    }
+    100%  {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}

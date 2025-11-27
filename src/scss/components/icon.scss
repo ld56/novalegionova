@@ -1,0 +1,15 @@
+@use 'abstracts' as *;
+
+.icon {
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex-shrink: 0;
+
+    // PONIŻEJ PRZYKŁAD:
+    // &--arrow {
+    //     background-image: url('../../dist/svg/arrow.svg');
+    //     aspect-ratio: 15.34/10.37;
+    // }
+}

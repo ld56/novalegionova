@@ -1,0 +1,56 @@
+@use 'abstracts' as *;
+
+$space: clamp-to(992, 70, 100, 'px');
+$space-desktop: clamp-to(1920, 100, 125, 'px');
+
+.mt {
+    margin-top: $space;
+
+    @include from-breakpoint(tablet2) {
+        margin-top: $space-desktop;
+    }
+}
+
+.mb {
+    margin-bottom: $space;
+
+    @include from-breakpoint(tablet2) {
+        margin-bottom: $space-desktop;
+    }
+}
+
+.pt {
+    padding-top: $space;
+
+    @include from-breakpoint(tablet2) {
+        padding-top: $space-desktop;
+    }
+}
+
+.pb {
+    padding-bottom: $space;
+
+    @include from-breakpoint(tablet2) {
+        padding-bottom: $space-desktop;
+    }
+}
+
+.mtb {
+    margin-top: $space;
+    margin-bottom: $space;
+
+    @include from-breakpoint(tablet2) {
+        margin-top: $space-desktop;
+        margin-bottom: $space-desktop;
+    }
+}
+
+.ptb {
+    padding-top: $space;
+    padding-bottom: $space;
+
+    @include from-breakpoint(tablet2) {
+        padding-top: $space-desktop;
+        padding-bottom: $space-desktop;
+    }
+}

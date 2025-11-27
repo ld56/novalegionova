@@ -1,0 +1,19 @@
+@use 'abstracts' as *;
+
+.btn {
+    display: block;
+    position: relative;
+    padding: 14px 20px;
+    border-radius: 5px;
+    font-size: rem(16);
+    outline: none;
+    color: black;
+    background-color: white;
+    border: none;
+    z-index: 0;
+    text-decoration: none;
+    width: fit-content;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    flex-shrink: 0;
+    text-align: center;
+}

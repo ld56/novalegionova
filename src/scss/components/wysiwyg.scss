@@ -1,0 +1,85 @@
+@use 'abstracts' as *;
+
+.wysiwyg {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; 
+    // outline: 1px solid black;
+    text-align: left;
+
+    & > strong,
+    & > * > strong,
+    & > * > * > strong,
+    & > * > * > * > strong,
+    & > * > * > * > * > strong {
+        font-weight: 600;
+    }
+
+    & > a,
+    & > * > a,
+    & > * > * > a,
+    & > * > * > * > a,
+    & > * > * > * > * > a {
+        color: color('cf6');
+    }
+
+    & > img,
+    & > * > img,
+    & > * > * > img,
+    & > * > * > * > img,
+    & > * > * > * > * > img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        margin: 10px auto;
+    }
+
+    & > ul {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-left: 40px;
+        list-style-type: disc;
+        // outline: 1px solid red;
+    }
+
+    & > ol {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-left: 40px;
+        // outline: 1px solid blue;
+    }
+
+    & > ul > li > ul,
+    & > ol > li > ul {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-left: 40px;
+        list-style-type: disc;
+        // outline: 1px solid red;
+    }
+
+    & > ul > li > ol,
+    & > ol > li > ol {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-left: 40px;
+        // outline: 1px solid red;
+    }
+
+    & > p {
+        & > img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            width: 80%;
+            margin: 10px auto;
+        }
+        
+    }
+}

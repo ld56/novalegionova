@@ -1,0 +1,179 @@
+@use 'abstracts' as *;
+
+.fz {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: left;
+
+    &--58 {
+        font-size: clamp-to(991, 34, 46, 'rem');
+    
+        @include from-breakpoint(desktop1) {
+            font-size: clamp-to(1920, 46, 58, 'rem');
+        }
+    }
+
+    &--48 {
+        font-size: clamp-to(991, 28, 36, 'rem');
+    
+        @include from-breakpoint(desktop1) {
+            font-size: clamp-to(1920, 36, 48, 'rem');
+        }
+    }
+    
+    &--28 {
+        font-size: clamp-to(991, 22, 24, 'rem');
+    
+        @include from-breakpoint(desktop1) {
+            font-size: clamp-to(1920, 24, 28, 'rem');
+        }
+    }
+
+    &--26 {
+        font-size: clamp-to(991, 20, 22, 'rem');
+    
+        @include from-breakpoint(desktop1) {
+            font-size: clamp-to(1920, 22, 26, 'rem');
+        }
+    }
+
+
+    &--22 {
+        font-size: clamp-to(991, 18, 20, 'rem');
+    
+        @include from-breakpoint(desktop1) {
+            font-size: clamp-to(1920, 20, 22, 'rem');
+        }
+    }
+
+    &--20 {
+        font-size: clamp-to(991, 16, 18, 'rem');
+
+        @include from-breakpoint(desktop1) {
+            font-size: clamp-to(1920, 18, 19.5, 'rem');
+        }
+    }
+
+
+    &--18 {
+        font-size: clamp-to(991, 16, 17, 'rem');
+
+        @include from-breakpoint(desktop1) {
+            font-size: clamp-to(1920, 17, 18, 'rem');
+        }
+    }
+
+    &--16 {
+        font-size: clamp-to(991, 14, 15, 'rem');
+
+        @include from-breakpoint(desktop1) {
+            font-size: clamp-to(1920, 15, 16, 'rem');
+        }
+    }
+
+    &--14 {
+        font-size: rem(14);
+    }
+}
+
+.lh {
+    &-105 {
+        line-height: fzlh(54, 57);
+    }
+
+    &-140 {
+        line-height: fzlh(20, 28);
+    }
+
+    &-120 {
+        line-height: fzlh(24, 29);
+    }
+
+    &-auto {
+        line-height: fzlh(48, 62);
+    }
+
+    &-114 {
+        line-height: fzlh(26, 30);
+    }
+
+    &-124 {
+        line-height: fzlh(20, 25);
+    }
+}
+
+
+
+.fw-100,
+.fw-thin,
+.fw-hairline {
+    font-weight: 100;
+}
+
+.fw-200,
+.fw-extralight,
+.fw-ultralight {
+    font-weight: 200;
+}
+
+.fw-300,
+.fw-light {
+    font-weight: 300;
+}
+
+.fw-400,
+.fw-normal,
+.fw-regular {
+    font-weight: 400;
+}
+
+.fw-500,
+.fw-medium {
+    font-weight: 500;
+}
+
+.fw-600,
+.fw-semibold,
+.fw-demibold {
+    font-weight: 600;
+}
+
+.fw-700,
+.fw-bold {
+    font-weight: 700;
+}
+
+.fw-800,
+.fw-extrabold,
+.fw-ultrabold {
+    font-weight: 800;
+}
+
+.fw-900,
+.fw-black,
+.fw-heavy {
+    font-weight: 900;
+}
+
+
+////////////////////////////////////////////////////////
+
+
+.ttu {
+    text-transform: uppercase;
+}
+
+.ttn {
+    text-transform: none;
+}
+
+///////////////////////////////////////////////////////
+
+.tdn {
+    text-decoration: none;
+}
+
+.tac {
+    text-align: center;
+}

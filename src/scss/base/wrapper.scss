@@ -1,0 +1,13 @@
+@use 'abstracts' as *;
+
+.wrapper {
+    width: calc(100% - 32px);
+    max-width: 500px;
+    margin: 0 auto;
+    
+    @include from-breakpoint(tablet1) {
+        width: calc(100% - 64px);
+        max-width: clamp-to(1920, 1248, 1400, 'px');
+        
+    }
+}

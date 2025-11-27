@@ -1,0 +1,15 @@
+@use 'abstracts' as *;
+
+.element-for-mobile {
+    @include from-breakpoint(tablet2) {
+        display: none;
+    }
+}
+
+.element-for-desktop {
+    display: none;
+
+    @include from-breakpoint(tablet2) {
+        display: block;
+    }
+}
