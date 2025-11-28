@@ -26,4 +26,15 @@
             background-color: color('accent2');
         }
     }
+
+    &--charcoal {
+        background-color: color('charcoal');
+        color: color('white');
+
+        @include from-breakpoint(desktop1) {
+            &:hover {
+                background-color: color('gray-888');
+            }
+        }
+    }
 }

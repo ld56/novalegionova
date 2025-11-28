@@ -63,6 +63,16 @@ $space80-desktop: clamp-to(1920, 74, 80, 'px');
 
 // ====
 
+.ptb58 {
+    padding-top: $space58;
+    padding-bottom: $space58;
+
+    @include from-breakpoint(desktop1) {
+        padding-top: $space58-desktop;
+        padding-bottom: $space58-desktop;
+    }
+}
+
 .mtb58 {
     margin-top: $space58;
     margin-bottom: $space58;
@@ -80,5 +90,15 @@ $space80-desktop: clamp-to(1920, 74, 80, 'px');
     @include from-breakpoint(desktop1) {
         padding-top: $space80-desktop;
         padding-bottom: $space80-desktop;
+    }
+}
+
+.mtb80 {
+    margin-top: $space80;
+    margin-bottom: $space80;
+
+    @include from-breakpoint(desktop1) {
+        margin-top: $space80-desktop;
+        margin-bottom: $space80-desktop;
     }
 }
