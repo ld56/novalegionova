@@ -3,9 +3,9 @@
 .btn {
     display: block;
     position: relative;
-    padding: 24px 36px;
+    padding: clamp-from(375, 20, 22, 'px') clamp-from(375, 32, 36, 'px');
     border-radius: 999px;
-    font-size: rem(18);
+    font-size: clamp-from(375, 16, 18, 'rem');
     line-height: fzlh(18, 12);
     outline: none;
     color: color('charcoal');
@@ -34,6 +34,18 @@
         @include from-breakpoint(desktop1) {
             &:hover {
                 background-color: color('gray-888');
+            }
+        }
+    }
+
+    &--border {
+        border: 2px solid color('charcoal');
+        background-color: transparent;
+        color: color('charcoal');
+
+        @include from-breakpoint(desktop1) {
+            &:hover {
+                background-color: color('accent2');
             }
         }
     }

@@ -1,0 +1,133 @@
+@use 'abstracts' as *;
+@use 'base/variables.scss' as *;
+
+.houses {
+
+    &__main-heading {
+        text-align: center;
+        font-family: $chillax;
+        max-width: 930px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__text {
+        text-align: center;
+        max-width: 930px;
+        margin: 32px auto clamp-to(992, 32, 50, 'px') auto;
+
+        @include from-breakpoint(tablet2) {
+            margin: 32px auto clamp-to(1440, 50, 72, 'px') auto;
+        }
+    }
+
+    &__card {
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid color('accent');
+
+        @include from-breakpoint(desktop1) {
+            &:hover {
+                & > .houses__bottom {
+                    background-color: color('accent');
+                }
+            }
+        }
+    }
+
+    &__bottom {
+        position: relative;
+        padding: 36px clamp-from(375, 24, 36, 'px') 36px clamp-from(375, 24, 36, 'px');
+        transition: background-color .3s ease-out;
+    }
+
+    &__name {
+        font-family: $chillax;
+    }
+
+    &__status {
+        position: absolute;
+        top: 26px;
+        right: clamp-from(375, 24, 36, 'px');
+        padding: 14px 20px;
+        border-radius: 999px;
+        line-height: fzlh(16, 11);
+
+        &--green {
+            background-color: color('green');
+            color: color('white');
+        }
+
+        &--yellow {
+            background-color: color('yellow');
+            color: color('charcoal');
+        }
+
+        &--red {
+            background-color: color('red');
+            color: color('white');
+        }
+    }
+
+    &__areabox {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin: 32px 0 clamp-to(1280, 32, 40, 'px') 0;
+    }
+
+    &__area {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+
+        @media (min-width: 500px) {
+            display: inline-block;
+        }
+    }
+
+    &__pricebox {
+        margin: 0 0 24px 0;
+    }
+
+    &__lowest-price {
+        margin: 24px 0 40px 0;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @include from-breakpoint(desktop1) {
+            flex-direction: row;
+            gap: 14px;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        
+        @include from-breakpoint(desktop1) {
+            width: fit-content;
+        }
+    }
+    
+    &__btn2 {
+        gap: 10px; 
+        width: 100%;
+        justify-content: center;
+
+        @include from-breakpoint(desktop1) {
+            width: fit-content;
+        }
+
+        &::after {
+            width: 16px;
+            height: auto;
+        }
+    }
+}
