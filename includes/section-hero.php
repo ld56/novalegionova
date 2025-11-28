@@ -1,26 +1,40 @@
 <section class="hero">
+
+    <?php if (get_fields()['hero']['background']) : ?>
+        <?php echo wp_get_attachment_image(get_fields()['hero']['background']['id'], 'full', false, [
+            'class' => 'img hero__image',
+            'loading' => false,
+            'sizes' => '100vw',
+        ]); ?>
+    <?php endif; ?>
+
+    <div class="hero__layer"></div>
+
     <div class="wrapper hero__wrapper">
 
         <div class="hero__content">
-            <h1 class="fz fz--58 lh-140 fw-600">Boilerplate</h1>
 
-            <div class="fz fz--16 lh-auto wysiwyg">
-                <p>Boilerplate to kluczowe narzędzie wykorzystywane w projektach opartych na WordPressie, które umożliwia programistom szybki start i spójny rozwój swoich motywów, wtyczek i innych rozszerzeń.</p>
-            </div>
+            <h1 class="fz fz--64 fw-500 c-white hero__heading">
+                <?php echo esc_html(get_fields()['hero']['heading']); ?>
+            </h1>
 
-            <h2 class="fz fz--24 fw-600">Ale czym dokładnie jest ten boilerplate i dlaczego jest tak ważny?</h2>
+            <p class="fz fz--20 c-white hero__text">
+                <?php echo wp_kses(remove_orphans(get_fields()['hero']['text']), tags_for_textarea()); ?>
+            </p>
 
-            <div class="fz fz--14 lh-140 wysiwyg">
-                <p>Boilerplate to gotowy szablon lub zestaw podstawowych plików i struktur, które stanowią fundament projektu WordPressa. Daje programistom gotową infrastrukturę do rozpoczęcia pracy nad swoim projektem, co znacząco przyspiesza proces rozwoju.</p>
-                <p>Dlaczego jest to tak istotne?</p>
-                <ul>
-                    <li><strong>Oszczędność czasu:</strong> Tworzenie od podstaw każdego motywu lub wtyczki WordPressa jest czasochłonne. Boilerplate dostarcza gotowy zestaw plików, który może być dostosowany do projektu, co pozwala zaoszczędzić mnóstwo czasu.</li>
-                    <li><strong>Zgodność z najlepszymi praktykami:</strong> Wielu boilerplate'ów jest zgodnych z najlepszymi praktykami WordPressa, co oznacza, że kod jest napisany z uwzględnieniem standardów i zaleceń WordPressa, co pomaga w uniknięciu problemów w trakcie rozwoju.</li>
-                    <li><strong>Spójność projektów:</strong> Dzięki korzystaniu z boilerplate, programiści mogą utrzymywać spójność między różnymi projektami. Standardowa struktura plików i konwencje ułatwiają zarządzanie projektami i przenoszenie wiedzy między nimi.</li>
-                </ul>
-            </div>
-
-            <button class="btn">Test</button>
+            <?php 
+                $link = get_fields()['hero']['button'];
+                if( isset($link['url']) ) {
+                    $link_url = $link['url'];
+                    $link_title = $link['title'];
+                    $link_target = $link['target'] ? $link['target'] : '_self';
+                }
+            ?>
+            <?php if ( isset($link['url']) ) : ?>
+                <a class="btn hero__btn" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
+                    <?php echo esc_html( $link_title ); ?>
+                </a>
+            <?php endif; ?>
 
         </div>
 

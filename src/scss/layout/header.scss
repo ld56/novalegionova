@@ -96,6 +96,11 @@
             font-size: rem(18);
             margin-left: 14px;
             line-height: fzlh(18, 25);
+            transition: background-color .3s ease-out;
+
+            &:hover {
+                background-color: color('gray-d5e');
+            }
         }
     }
 }

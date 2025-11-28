@@ -71,7 +71,7 @@
 
     // 9. REMOVE POSTS AND COMMENTS
     function remove_menu () {
-        remove_menu_page('edit.php');
+        // remove_menu_page('edit.php');
         remove_menu_page('edit-comments.php');
         // remove_menu_page('edit.php?post_type=acf-field-group');
     } 
@@ -300,24 +300,82 @@ function disable_default_endpoints( $endpoints ) {
 // Boost WordPress Security by Adding Essential Headers through functions.php
 // hoolite.be/wordpress/add-wordpress-security-headers-via-functions-php/
 // ///////////////////////////////////////////////////////////////
-    function hoolite_add_security_headers() {
-        // 1. ClickJacking
-        header("X-Frame-Options: SAMEORIGIN");
-        // 2. MIME Sniffing
-        header("X-Content-Type-Options: nosniff");
-        // 3. X-Xss-Protection
-        header("X-XSS-Protection: 1;mode=block");
-        // 4. Referrer Policy
-        header("Referrer-Policy: no-referrer-when-downgrade");
-        // 5. Content Security Policy (CSP)
-        header("Content-Security-Policy: upgrade-insecure-requests;");
-        // 6. HTTP Strict Transport Security (HSTS)
-        header('Strict-Transport-Security: "max-age=16070400" env=HTTPS');
+function hoolite_add_security_headers() {
+    // 1. ClickJacking
+    header("X-Frame-Options: SAMEORIGIN");
+    // 2. MIME Sniffing
+    header("X-Content-Type-Options: nosniff");
+    // 3. X-Xss-Protection
+    header("X-XSS-Protection: 1;mode=block");
+    // 4. Referrer Policy
+    header("Referrer-Policy: no-referrer-when-downgrade");
+    // 5. Content Security Policy (CSP)
+    header("Content-Security-Policy: upgrade-insecure-requests;");
+    // 6. HTTP Strict Transport Security (HSTS)
+    header('Strict-Transport-Security: "max-age=16070400" env=HTTPS');
+}
+add_action("send_headers", "hoolite_add_security_headers");
+
+// 7. Disable Themes & Plugins Editor
+define( 'DISALLOW_FILE_EDIT', true );
+
+// 8. Hide WordPress version
+add_filter( 'the_generator', '__return_empty_string' );
+
+
+/////////////////////////////////////////////////////////////////
+// Disable comments functionality 
+/////////////////////////////////////////////////////////////////
+// Disable comments and trackbacks site-wide
+function disable_comments_everywhere() {
+    return false;
+}
+add_filter('comments_open', 'disable_comments_everywhere', 20, 2);
+add_filter('pings_open', 'disable_comments_everywhere', 20, 2);
+add_filter('comments_array', '__return_empty_array', 20);
+// Remove comment-related items from the admin bar
+function remove_admin_bar_comments() {
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('comments');
+}
+add_action('wp_before_admin_bar_render', 'remove_admin_bar_comments');
+// Redirect any attempt to access comments page
+function disable_comments_admin_redirect() {
+    global $pagenow;
+    if ($pagenow === 'edit-comments.php') {
+        wp_redirect(admin_url());
+        exit;
     }
-    add_action("send_headers", "hoolite_add_security_headers");
-
-    // 7. Disable Themes & Plugins Editor
-    define( 'DISALLOW_FILE_EDIT', true );
-
-    // 8. Hide WordPress version
-    add_filter( 'the_generator', '__return_empty_string' );
+}
+add_action('admin_init', 'disable_comments_admin_redirect');
+// Remove comment-related menu items in admin
+function remove_comment_menu() {
+    remove_menu_page('edit-comments.php');
+}
+add_action('admin_menu', 'remove_comment_menu');
+// Disable REST API comment endpoints
+function disable_rest_api_comments($endpoints) {
+    unset($endpoints['comments']);
+    unset($endpoints['wp/v2/comments']);
+    return $endpoints;
+}
+add_filter('rest_endpoints', 'disable_rest_api_comments');
+// Disable XML-RPC comments
+add_filter('xmlrpc_methods', function ($methods) {
+    unset($methods['wp.getComments']);
+    return $methods;
+});
+// Remove comment support from post types
+function remove_comment_support() {
+    foreach (get_post_types() as $post_type) {
+        remove_post_type_support($post_type, 'comments');
+        remove_post_type_support($post_type, 'trackbacks');
+    }
+}
+add_action('init', 'remove_comment_support');
+// Hide comment metabox in admin
+function remove_comment_metabox() {
+    remove_meta_box('commentstatusdiv', 'post', 'normal');
+    remove_meta_box('commentsdiv', 'post', 'normal');
+}
+add_action('admin_menu', 'remove_comment_metabox');

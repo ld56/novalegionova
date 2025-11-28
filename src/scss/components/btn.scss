@@ -3,17 +3,27 @@
 .btn {
     display: block;
     position: relative;
-    padding: 14px 20px;
-    border-radius: 5px;
-    font-size: rem(16);
+    padding: 24px 36px;
+    border-radius: 999px;
+    font-size: rem(18);
+    line-height: fzlh(18, 12);
     outline: none;
-    color: black;
-    background-color: white;
+    color: color('charcoal');
+    background-color: color('accent');
     border: none;
     z-index: 0;
     text-decoration: none;
     width: fit-content;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     flex-shrink: 0;
     text-align: center;
+    font-family: $chillax;
+    font-weight: 500;
+
+    @include from-breakpoint(desktop1) {
+        transition: background-color .3s ease-out;
+
+        &:hover {
+            background-color: color('accent2');
+        }
+    }
 }
