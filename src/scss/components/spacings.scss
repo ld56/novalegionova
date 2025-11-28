@@ -12,7 +12,7 @@ $space80-desktop: clamp-to(1920, 74, 80, 'px');
 // .mt140 {
 //     margin-top: $space140;
 
-//     @include from-breakpoint(tablet2) {
+//     @include from-breakpoint(desktop1) {
 //         margin-top: $space140-desktop;
 //     }
 // }
@@ -20,7 +20,7 @@ $space80-desktop: clamp-to(1920, 74, 80, 'px');
 // .mb140 {
 //     margin-bottom: $space140;
 
-//     @include from-breakpoint(tablet2) {
+//     @include from-breakpoint(desktop1) {
 //         margin-bottom: $space140-desktop;
 //     }
 // }
@@ -28,7 +28,7 @@ $space80-desktop: clamp-to(1920, 74, 80, 'px');
 // .pt140 {
 //     padding-top: $space140;
 
-//     @include from-breakpoint(tablet2) {
+//     @include from-breakpoint(desktop1) {
 //         padding-top: $space140-desktop;
 //     }
 // }
@@ -36,7 +36,7 @@ $space80-desktop: clamp-to(1920, 74, 80, 'px');
 // .pb140 {
 //     padding-bottom: $space140;
 
-//     @include from-breakpoint(tablet2) {
+//     @include from-breakpoint(desktop1) {
 //         padding-bottom: $space140-desktop;
 //     }
 // }
@@ -45,7 +45,7 @@ $space80-desktop: clamp-to(1920, 74, 80, 'px');
     margin-top: $space140;
     margin-bottom: $space140;
 
-    @include from-breakpoint(tablet2) {
+    @include from-breakpoint(desktop1) {
         margin-top: $space140-desktop;
         margin-bottom: $space140-desktop;
     }
@@ -55,7 +55,7 @@ $space80-desktop: clamp-to(1920, 74, 80, 'px');
     padding-top: $space140;
     padding-bottom: $space140;
 
-    @include from-breakpoint(tablet2) {
+    @include from-breakpoint(desktop1) {
         padding-top: $space140-desktop;
         padding-bottom: $space140-desktop;
     }
@@ -67,7 +67,7 @@ $space80-desktop: clamp-to(1920, 74, 80, 'px');
     margin-top: $space58;
     margin-bottom: $space58;
 
-    @include from-breakpoint(tablet2) {
+    @include from-breakpoint(desktop1) {
         margin-top: $space58-desktop;
         margin-bottom: $space58-desktop;
     }
@@ -77,7 +77,7 @@ $space80-desktop: clamp-to(1920, 74, 80, 'px');
     padding-top: $space80;
     padding-bottom: $space80;
 
-    @include from-breakpoint(tablet2) {
+    @include from-breakpoint(desktop1) {
         padding-top: $space80-desktop;
         padding-bottom: $space80-desktop;
     }
