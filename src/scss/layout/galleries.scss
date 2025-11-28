@@ -1,0 +1,125 @@
+@use 'abstracts' as *;
+
+.galleries {
+
+    &__wrapper {
+        @include from-breakpoint(desktop1) {
+            padding-left: clamp-to(1440, 70, 115, 'px');
+        }
+    }
+
+    &__heading{
+        font-family: $chillax;
+    }
+
+    &__triggers {
+        display: flex;
+        flex-direction: row;
+        gap: clamp-to(992, 10, 20, 'px');
+        margin-top: 10px;
+
+        @include from-breakpoint(mobile2) {
+            flex-direction: row;
+            gap: clamp-to(1920, 30, 42, 'px');
+        }
+    }
+
+    &__trigger {
+        font-weight: 300;
+        font-size: rem(17);
+        line-height: fzlh(17, 21);
+        padding: 12px 6px;
+        cursor: pointer;
+        margin-bottom: clamp-to(1920, 48, 64, 'px');
+        color: color('gray-888');
+
+        @include from-breakpoint(desktop1) {
+            transition: background-color .2s ease-out;
+
+            &:hover {
+                background-color: rgb(230, 230, 230);
+            }
+        }
+
+        &--active {
+            border-bottom: 1px solid color('gold');
+            color: color('charcoal');
+        }
+    }
+
+    &__gallery {
+        height: 0;
+        overflow: hidden;
+        position: relative;
+        opacity: 0;
+        transition: opacity .3s ease-out;
+        // border: 2px dashed red;
+
+        &--active {
+            opacity: 1;
+        }
+
+        &--current {
+            height: auto;
+            overflow: visible;
+            display: flex;
+        }
+    }
+
+    &__pane {
+        position: relative;
+        aspect-ratio: 965/578;
+        overflow: hidden;
+        opacity: .45;
+        transition: opacity .3s ease-out;
+        
+        @include from-breakpoint(tablet2) {
+            border-radius: 14px;
+            aspect-ratio: 723.75/441.27;
+        }
+
+        &.swiper-slide-active {
+            opacity: 1;
+        }
+    }
+
+    &__controller {
+        position: absolute;
+        top: 50%;
+        // border: 1px dashed red;
+        aspect-ratio: 1/1;
+        width: clamp-to(992, 40, 60, 'px');
+        height: auto;
+        z-index: 2;
+        transform: translateY(-50%);
+        cursor: pointer;
+        background-size: 91.25%;
+        filter: filter('black');
+
+        @include from-breakpoint(tablet2) {
+            width: clamp-to(992, 60, 80, 'px');
+        }
+
+        &--left {
+            left: 10px;
+            background-image: url('../svg/controller-left-mobile.svg');
+
+            @include from-breakpoint(tablet1) {
+                left: 24px;
+                background-image: url('../svg/controller-left.svg');
+
+            }
+        }
+
+        &--right {
+            right: 10px;
+            background-image: url('../svg/controller-right-mobile.svg');
+
+            @include from-breakpoint(tablet1) {
+                right: 24px;
+                background-image: url('../svg/controller-right.svg');
+            }
+        }
+
+    }
+}

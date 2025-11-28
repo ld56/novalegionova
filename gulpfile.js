@@ -17,6 +17,8 @@ const jsFiles = [
     './src/js/inquiry-form.js',
     './src/js/header.js',
     './src/js/menu.js',
+    './src/js/swiper-galleries.js',
+    './src/js/galleries-switcher.js',
 ];
 
 function browser_sync_serve(cb) {

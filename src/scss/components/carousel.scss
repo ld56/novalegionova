@@ -1,20 +1,20 @@
 @use 'abstracts' as *;
 
-// .carousel {
-//     position: relative;
-//     overflow: hidden;
-//     touch-action: pan-y;
+.carousel {
+    position: relative;
+    overflow: hidden;
+    touch-action: pan-y;
     
-//     &__ribbon {
-//         display: flex;
-//         flex-direction: row;
-//         height: 100%;
-//         width: fit-content;
-//     }
+    &__ribbon {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        width: fit-content;
+    }
     
-//     &__slide {
-//         height: 100%;
-//         width: 100%;
-//         flex-shrink: 0;
-//     }
-// }
+    &__slide {
+        height: 100%;
+        width: 100%;
+        flex-shrink: 0;
+    }
+}
