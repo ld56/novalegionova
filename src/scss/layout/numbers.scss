@@ -1,0 +1,81 @@
+@use 'abstracts' as *;
+@use 'base/variables.scss' as *;
+
+.numbers {
+    &__image {
+        border-radius: 14px;
+        aspect-ratio: 1/1;
+        width: 100%;
+        height: auto;
+
+        @include from-breakpoint(tablet1) {
+            aspect-ratio: unset;
+        }
+    }
+
+    &__main-row {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: clamp-to(992, 40, 66, 'px');
+
+        @include from-breakpoint(tablet2) {
+            justify-content: space-between;
+            flex-direction: row;
+            gap: 20px;
+        }
+    }
+
+    &__image {
+        height: 100%;
+        width: 100%;
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @include from-breakpoint(tablet2) {
+            padding: clamp-to(1440, 70, 105, 'px') 0;
+        }
+    }
+
+    &__cell-row {
+        gap: 30px;
+
+        @include from-breakpoint(tablet2) {
+            row-gap: clamp-to(1440, 60, 100, 'px');
+            gap: 20px;
+        }
+    }
+
+    &__data {
+
+    }
+
+    &__value {
+        display: inline-block;
+        text-align: center;
+        font-family: $chillax;
+        width: 100%;
+
+        @include from-breakpoint(tablet2) {
+            width: fit-content;
+        }
+    }
+
+    &__unit {
+        font-family: $chillax;
+        text-align: center;
+    }
+
+    &__text {
+        width: 100%;
+        text-align: center;
+
+
+        @include from-breakpoint(tablet2) {
+            text-align: left;
+            width: fit-content;
+        }
+    }
+}

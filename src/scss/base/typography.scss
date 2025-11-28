@@ -11,7 +11,7 @@
         line-height: fzlh(64, 77);
     
         @include from-breakpoint(desktop1) {
-            font-size: clamp-to(1920, 50, 64, 'rem');
+            font-size: clamp-to(1440, 50, 64, 'rem');
         }
     }
 
@@ -25,7 +25,7 @@
         line-height: fzlh(1, 1);
     
         @include from-breakpoint(desktop1) {
-            font-size: clamp-to(1920, 38, 44, 'rem');
+            font-size: clamp-to(1440, 38, 44, 'rem');
         }
     }
 
@@ -44,7 +44,7 @@
         line-height: fzlh(1, 1);
     
         @include from-breakpoint(desktop1) {
-            font-size: clamp-to(1920, 42, 48, 'rem');
+            font-size: clamp-to(1440, 42, 48, 'rem');
         }
     }
 
@@ -53,7 +53,7 @@
         line-height: fzlh(64, 77);
     
         @include from-breakpoint(desktop1) {
-            font-size: clamp-to(1920, 62, 72, 'rem');
+            font-size: clamp-to(1440, 62, 72, 'rem');
         }
     }
 
@@ -62,7 +62,7 @@
         line-height: fzlh(1, 1);
     
         @include from-breakpoint(desktop1) {
-            font-size: clamp-to(1920, 28, 32, 'rem');
+            font-size: clamp-to(1440, 28, 32, 'rem');
         }
     }
 
@@ -70,6 +70,16 @@
         font-size: rem(14);
         line-height: fzlh(14, 21);
     }
+
+    &--72-2 {
+        font-size: clamp-to(991, 58, 60, 'rem');
+        line-height: fzlh(64, 77);
+    
+        @include from-breakpoint(desktop1) {
+            font-size: clamp-to(1440, 60, 68, 'rem');
+        }
+    }
+
 
 }
 
