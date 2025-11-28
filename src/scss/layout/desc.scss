@@ -1,0 +1,105 @@
+@use 'abstracts' as *;
+@use 'base/variables.scss' as *;
+
+.desc {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: clamp-to(1280, 40, 80, 'px');
+
+        @include from-breakpoint(desktop1) {
+            gap: 0;
+        }
+    }
+
+    &__row1 {
+        gap: clamp-to(1280, 30, 40, 'px');
+
+        @include from-breakpoint(desktop1) {
+            justify-content: space-between;
+            gap: 20px;
+        }
+    }
+
+    &__heading1 {
+        margin-bottom: 20px;
+        font-family: $chillax;
+
+        @include from-breakpoint(desktop1) {
+            margin-bottom: clamp-to(1440, 36, 48, 'px');
+            max-width: 500px;
+        }
+    }
+
+    &__text1 {
+        display: flex;
+        flex-direction: column;
+
+        @include from-breakpoint(desktop1) {
+            margin-top: auto;
+            margin-bottom: clamp-to(1440, 84, 128, 'px');
+        }
+    }
+
+    &__imgwrap1 {
+
+    }
+
+    &__img1 {
+        border-radius: 14px;
+        aspect-ratio: 576/400;
+
+        @include from-breakpoint(desktop1) {
+            aspect-ratio: 555/694;
+        }
+    }
+
+    &__row2 {
+        gap: clamp-to(1280, 30, 40, 'px');
+        flex-direction: column-reverse;
+
+        @include from-breakpoint(desktop1) {
+            flex-direction: row;
+            gap: 20px;
+        }
+    }
+
+    &__heading2 {
+        margin-bottom: 20px;
+        font-family: $chillax;
+
+        @include from-breakpoint(desktop1) {
+            margin-bottom: clamp-to(1440, 24, 32, 'px');
+        }
+    }
+
+
+    &__text2 {
+        display: flex;
+        flex-direction: column;
+        
+        @include from-breakpoint(desktop1) {
+            position: relative;
+            margin-top: auto;
+            transform: translateY(-16px);
+            padding-left: clamp-to(1400, 80, 115, 'px');
+        }
+    }
+
+    &__imgwrap2 {
+        @include from-breakpoint(desktop1) {
+            position: relative;
+            padding-left: clamp-to(1400, 50, 94, 'px');
+        }
+    }
+
+    &__img2 {
+        border-radius: 14px;
+        aspect-ratio: 576/400;
+
+        @include from-breakpoint(desktop1) {
+            position: relative;
+            transform: translateY(-16px);
+        }
+    }
+}
