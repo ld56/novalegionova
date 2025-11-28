@@ -9,12 +9,12 @@
 
 html {
 	scroll-behavior: smooth;
-    font-family: $poppins;
+    font-family: $inter;
     // overflow-x: hidden;
-    // scroll-padding-top: 70px;
+    scroll-padding-top: 80px;
 
     @include from-breakpoint(tablet2) {
-        // scroll-padding-top: clamp-to(1920, 70, 80, 'px');
+        scroll-padding-top: 112px;
     }
 }
 

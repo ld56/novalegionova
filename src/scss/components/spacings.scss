@@ -1,56 +1,84 @@
 @use 'abstracts' as *;
 
-$space: clamp-to(992, 70, 100, 'px');
-$space-desktop: clamp-to(1920, 100, 125, 'px');
+$space140: clamp-to(1280, 80, 100, 'px');
+$space140-desktop: clamp-to(1920, 100, 140, 'px');
 
-.mt {
-    margin-top: $space;
+$space58: 50px;
+$space58-desktop: clamp-to(1920, 50, 58, 'px');
+
+$space80: clamp-to(1280, 68, 74, 'px');
+$space80-desktop: clamp-to(1920, 74, 80, 'px');
+
+// .mt140 {
+//     margin-top: $space140;
+
+//     @include from-breakpoint(tablet2) {
+//         margin-top: $space140-desktop;
+//     }
+// }
+
+// .mb140 {
+//     margin-bottom: $space140;
+
+//     @include from-breakpoint(tablet2) {
+//         margin-bottom: $space140-desktop;
+//     }
+// }
+
+// .pt140 {
+//     padding-top: $space140;
+
+//     @include from-breakpoint(tablet2) {
+//         padding-top: $space140-desktop;
+//     }
+// }
+
+// .pb140 {
+//     padding-bottom: $space140;
+
+//     @include from-breakpoint(tablet2) {
+//         padding-bottom: $space140-desktop;
+//     }
+// }
+
+.mtb140 {
+    margin-top: $space140;
+    margin-bottom: $space140;
 
     @include from-breakpoint(tablet2) {
-        margin-top: $space-desktop;
+        margin-top: $space140-desktop;
+        margin-bottom: $space140-desktop;
     }
 }
 
-.mb {
-    margin-bottom: $space;
+.ptb140 {
+    padding-top: $space140;
+    padding-bottom: $space140;
 
     @include from-breakpoint(tablet2) {
-        margin-bottom: $space-desktop;
+        padding-top: $space140-desktop;
+        padding-bottom: $space140-desktop;
     }
 }
 
-.pt {
-    padding-top: $space;
+// ====
+
+.mtb58 {
+    margin-top: $space58;
+    margin-bottom: $space58;
 
     @include from-breakpoint(tablet2) {
-        padding-top: $space-desktop;
+        margin-top: $space58-desktop;
+        margin-bottom: $space58-desktop;
     }
 }
 
-.pb {
-    padding-bottom: $space;
+.ptb80 {
+    padding-top: $space80;
+    padding-bottom: $space80;
 
     @include from-breakpoint(tablet2) {
-        padding-bottom: $space-desktop;
-    }
-}
-
-.mtb {
-    margin-top: $space;
-    margin-bottom: $space;
-
-    @include from-breakpoint(tablet2) {
-        margin-top: $space-desktop;
-        margin-bottom: $space-desktop;
-    }
-}
-
-.ptb {
-    padding-top: $space;
-    padding-bottom: $space;
-
-    @include from-breakpoint(tablet2) {
-        padding-top: $space-desktop;
-        padding-bottom: $space-desktop;
+        padding-top: $space80-desktop;
+        padding-bottom: $space80-desktop;
     }
 }

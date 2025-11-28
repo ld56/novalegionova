@@ -1,19 +1,29 @@
-/* poppins-regular - latin-ext */
 @font-face {
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 300;
      font-display: swap;
-     font-family: 'Poppins';
+     src: url('../fonts/inter-v20-latin_latin-ext-300.woff2') format('woff2');
+}
+@font-face {
+     font-family: 'Inter';
      font-style: normal;
      font-weight: 400;
-     src: url('../fonts/poppins-v20-latin-ext-regular.woff2') format('woff2'), 
-          url('../fonts/poppins-v20-latin-ext-regular.woff') format('woff'); 
+     font-display: swap;
+     src: url('../fonts/inter-v20-latin_latin-ext-regular.woff2') format('woff2');
+}
+@font-face {
+     font-family: 'Inter';
+     font-style: normal;
+     font-weight: 500;
+     font-display: swap;
+     src: url('../fonts/inter-v20-latin_latin-ext-500.woff2') format('woff2');
 }
 
-/* poppins-600 - latin-ext */
 @font-face {
-     font-display: swap;
-     font-family: 'Poppins';
+     font-family: 'Chillax-Medium';
      font-style: normal;
-     font-weight: 600;
-     src: url('../fonts/poppins-v20-latin-ext-600.woff2') format('woff2'),
-          url('../fonts/poppins-v20-latin-ext-600.woff') format('woff'); 
+     font-weight: 500;
+     font-display: swap;
+     src: url('../fonts/Chillax-Medium.woff2') format('woff2');
 }

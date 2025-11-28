@@ -6,75 +6,71 @@
     margin-bottom: 0;
     text-align: left;
 
-    &--58 {
-        font-size: clamp-to(991, 34, 46, 'rem');
+    &--64 {
+        font-size: clamp-to(991, 40, 50, 'rem');
+        line-height: fzlh(64, 77);
     
         @include from-breakpoint(desktop1) {
-            font-size: clamp-to(1920, 46, 58, 'rem');
-        }
-    }
-
-    &--48 {
-        font-size: clamp-to(991, 28, 36, 'rem');
-    
-        @include from-breakpoint(desktop1) {
-            font-size: clamp-to(1920, 36, 48, 'rem');
-        }
-    }
-    
-    &--28 {
-        font-size: clamp-to(991, 22, 24, 'rem');
-    
-        @include from-breakpoint(desktop1) {
-            font-size: clamp-to(1920, 24, 28, 'rem');
-        }
-    }
-
-    &--26 {
-        font-size: clamp-to(991, 20, 22, 'rem');
-    
-        @include from-breakpoint(desktop1) {
-            font-size: clamp-to(1920, 22, 26, 'rem');
-        }
-    }
-
-
-    &--22 {
-        font-size: clamp-to(991, 18, 20, 'rem');
-    
-        @include from-breakpoint(desktop1) {
-            font-size: clamp-to(1920, 20, 22, 'rem');
+            font-size: clamp-to(1920, 50, 64, 'rem');
         }
     }
 
     &--20 {
-        font-size: clamp-to(991, 16, 18, 'rem');
+        font-size: clamp-to(991, 18, 20, 'rem');
+        line-height: fzlh(20, 30);
+    }
 
+    &--44 {
+        font-size: clamp-to(991, 32, 38, 'rem');
+        line-height: fzlh(1, 1);
+    
         @include from-breakpoint(desktop1) {
-            font-size: clamp-to(1920, 18, 19.5, 'rem');
+            font-size: clamp-to(1920, 38, 44, 'rem');
         }
     }
 
-
     &--18 {
-        font-size: clamp-to(991, 16, 17, 'rem');
-
-        @include from-breakpoint(desktop1) {
-            font-size: clamp-to(1920, 17, 18, 'rem');
-        }
+        font-size: rem(18);
+        line-height: fzlh(18, 27);
     }
 
     &--16 {
-        font-size: clamp-to(991, 14, 15, 'rem');
+        font-size: rem(16);
+        line-height: fzlh(16, 24);
+    }
 
+    &--48 {
+        font-size: clamp-to(991, 34, 42, 'rem');
+        line-height: fzlh(1, 1);
+    
         @include from-breakpoint(desktop1) {
-            font-size: clamp-to(1920, 15, 16, 'rem');
+            font-size: clamp-to(1920, 42, 48, 'rem');
+        }
+    }
+
+    &--72 {
+        font-size: clamp-to(991, 58, 62, 'rem');
+        line-height: fzlh(64, 77);
+    
+        @include from-breakpoint(desktop1) {
+            font-size: clamp-to(1920, 62, 72, 'rem');
+        }
+    }
+
+    &--32 {
+        font-size: clamp-to(991, 26, 28, 'rem');
+        line-height: fzlh(1, 1);
+    
+        @include from-breakpoint(desktop1) {
+            font-size: clamp-to(1920, 28, 32, 'rem');
         }
     }
 
     &--14 {
         font-size: rem(14);
+        line-height: fzlh(14, 21);
     }
+
 }
 
 .lh {

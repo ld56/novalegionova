@@ -6,6 +6,7 @@ require_once 'functions/admin-bar-display.php';
 require_once 'functions/admin-menu-order.php';
 require_once 'functions/admin-styles.php';
 require_once 'functions/admin-versions.php';
+require_once 'functions/auto-updates.php';
 require_once 'functions/cpt.php';
 require_once 'functions/custom-functions.php';
 require_once 'functions/images.php';

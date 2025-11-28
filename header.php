@@ -9,20 +9,15 @@
     <?php if (get_privacy_policy_url()) : ?>
     <meta name="policy-link" content="<?php echo get_privacy_policy_url(); ?>">
     <?php endif; ?>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
-    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
-    </noscript>
     <?php if (empty(get_option('site_icon'))) : ?>
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/dist/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/dist/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/dist/favicon/favicon-16x16.png">
-    <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/dist/favicon/site.webmanifest">
-    <link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/dist/favicon/safari-pinned-tab.svg" color="#535353">
-    <meta name="msapplication-TileColor" content="#55de51">
-    <meta name="theme-color" content="#eeeeee">
+    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/dist/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="<?php echo get_template_directory_uri(); ?>/dist/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/dist/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/dist/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Nova Legionova" />
+    <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/dist/favicon/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
     <?php endif; ?>
     <?php wp_head(); ?>
 </head>
