@@ -19,13 +19,8 @@ html {
 }
 
 body {
-    padding-top: $header-mobile;
-    background-color: #eeeeee;
+    background-color: #ffffff;
     // overflow-x: hidden;
-
-    @include from-breakpoint(desktop1) {
-        padding-top: $header-desktop;
-    }
 }
 
 main {

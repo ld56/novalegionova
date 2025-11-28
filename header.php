@@ -38,12 +38,38 @@
         <div class="wrapper header__wrapper">
 
             <a class="header__home" href="<?php echo get_home_url(); ?>" aria-label="Strona główna">
-                <img src="<?php bloginfo('template_directory');?>/dist/svg/ld200x120.svg" alt="" class="header__logo" aria-label="Logo strony">
+                <?php if (get_fields('options')['global']['general']['logo']) : ?>
+                    <?php echo wp_get_attachment_image(get_fields('options')['global']['general']['logo']['id'], 'full', true, [
+                        'class' => 'img header__logo',
+                        'loading' => false,
+                    ]); ?>
+                <?php endif; ?>
             </a>
 
-            <button class="header__button header__button--open" id="menu-open" aria-label="Otwórz menu mobilne" aria-expanded="false"></button> 
+            <div class="header__mobile-buttons">
+                <a class="header__button header__button--contact" href="#kontakt" aria-label="Przejdź do sekcji Kontakt"></a> 
+                <?php 
+                    $link = get_fields('options')['global']['general']['contact-details']['tel'];
+                    if( isset($link['url']) ) {
+                        $link_url = $link['url'];
+                        $link_title = $link['title'];
+                        $link_target = $link['target'] ? $link['target'] : '_self';
+                    }
+                ?>
+                <?php if ( isset($link['url']) ) : ?>
+                    <a class="header__button header__button--phone" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" aria-label="<?php echo esc_html( $link_title ); ?>"></a> 
+                <?php endif; ?>
+                <button class="header__button header__button--open" id="menu-open" aria-label="Otwórz menu mobilne" aria-expanded="false"></button> 
+            </div>
 
             <?php get_template_part('components/component', 'menu');?>
 
+            <?php if ( isset($link['url']) ) : ?>
+                <a class="bgc-white fw-500 header__desktop-no" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" >
+                    <?php echo esc_html( $link_title ); ?>
+                </a> 
+            <?php endif; ?>
+
         </div>
+        
     </header>

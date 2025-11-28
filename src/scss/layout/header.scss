@@ -8,8 +8,7 @@
     width: 100%;
     z-index: 999;
     transition: transform .4s, background-color .4s;
-    background-color: color('white');
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: transparent;
 
     @include from-breakpoint(desktop1) {
         height: $header-desktop;
@@ -24,18 +23,24 @@
 
     &__logo {
         display: block;
-        aspect-ratio: 200/120;
-        width: 42px;
+        aspect-ratio: 215.15/26.74;
+        width: clamp-from(375, 160, 190, 'px');
         height: auto;
-
+        
         @include from-breakpoint(desktop1) {
-            width: clamp-to(1920, 42, 50, 'px');
+            width: 215.15px;
         }
     }
 
+    &__mobile-buttons {
+        display: flex;
+        gap: 8px;
+    }
+
     &__button {
-        height: 60px;
-        width: 60px;
+        aspect-ratio: 1/1;
+        width: clamp-to(768, 36, 46, 'px');
+        height: auto;
         position: relative;
         background-position: 100% 50%;
         background-repeat: no-repeat;
@@ -50,15 +55,47 @@
 
         &--open {
             background-image: url('../svg/menu.svg');
-            background-size: 40% 40%;
-            filter: filter('black');
+            background-size: 60% 60%;
+        }
+
+        &--contact {
+            background-image: url('../svg/contact.svg');
+            background-size: 60% 60%;
+        }
+
+        &--phone {
+            background-image: url('../svg/phone.svg');
+            background-size: 60% 60%;
         }
 
         &--close {
             background-image: url('../svg/close.svg');
-            background-size: 35% 35%;
+            background-size: 60% 60%;
             filter: filter('black');
-            color: #636363;
+        }
+    }
+
+    &__desktop-no {
+        display: none;
+        
+        @include from-breakpoint(desktop1) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 999px;
+            text-decoration: none;
+            text-align: center;
+            flex-shrink: 0;
+            padding-top: 17px;
+            padding: 17px;
+            width: fit-content;
+            padding-left: clamp-to(1440, 18, 24, 'px');
+            padding-right: clamp-to(1440, 18, 24, 'px');
+            color: color('charcoal');
+            font-family: $chillax;
+            font-size: rem(18);
+            margin-left: 14px;
+            line-height: fzlh(18, 25);
         }
     }
 }

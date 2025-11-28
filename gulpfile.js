@@ -15,6 +15,7 @@ const fs = require('fs');
 const jsFiles = [
     './src/js/crucial-values.js',
     './src/js/inquiry-form.js',
+    './src/js/header.js',
     './src/js/menu.js',
 ];
 

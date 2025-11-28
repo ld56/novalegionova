@@ -1,6 +1,18 @@
 @use 'abstracts' as *;
+@use 'base/variables.scss' as *;
 
 .hero {
+    background-color: rgb(55, 55, 56);
+    padding-top: $header-mobile;
+    border: 4px dashed red;
+
+    @include from-breakpoint(desktop1) {
+        padding-top: $header-desktop;
+        height: calc(100vh);
+        min-height: clamp-from(1280, 700, 800, 'px');
+        max-height: clamp-from(1280, 740, 970, 'px');
+    }
+
     &__content {
         display: flex;
         flex-direction: column;

@@ -93,10 +93,10 @@ class ld56_header_menu_walker extends Walker {
         }
         $atts['href']         = ! empty( $item->url ) ? $item->url : '';
         $atts['aria-current'] = $item->current ? 'page' : '';
-        $atts['class'] = 'c-black menu__a';
+        $atts['class'] = 'menu__a';
 
         if ($depth > 0) {
-            $atts['class'] = 'c-black menu__a menu__a--sub';
+            $atts['class'] = 'menu__a menu__a--sub';
         }
 
         $atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args, $depth );
