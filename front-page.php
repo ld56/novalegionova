@@ -16,6 +16,7 @@ get_header();?>
     <?php get_template_part('includes/section', 'map');?>
     <?php get_template_part('includes/section', 'numbers');?>
     <?php get_template_part('includes/section', 'directions');?>
+    <?php get_template_part('includes/section', 'offer');?>
 
     <?php get_template_part('includes/section', 'cta', [
         'data' => get_fields()['cta2'],

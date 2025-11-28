@@ -13,7 +13,7 @@
                 <?php if (get_fields()['directions']['image']) : ?>
                     <?php echo wp_get_attachment_image(get_fields()['directions']['image']['id'], 'full', false, [
                         'class' => 'img directions__image',
-                        'loading' => false,
+                        'loading' => 'lazy',
                         'sizes' => '(max-width: 1279px) 100vw, 50vw',
                     ]); ?>
                 <?php endif; ?>

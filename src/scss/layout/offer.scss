@@ -1,0 +1,65 @@
+@use 'abstracts' as *;
+@use 'base/variables.scss' as *;
+
+.offer {
+    &__heading {
+        font-family: $chillax;
+    }
+
+    &__text {
+        margin-top: 36px;
+
+        @include from-breakpoint(tablet2) {
+            margin-top: clamp-to(1440, 36, 48, 'px');
+            max-width: 680px;
+        }
+    }
+
+    &__first-row {
+        margin-top: 80px;
+        flex-direction: column-reverse;
+
+        @include from-breakpoint(tablet2) {
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+        @include from-breakpoint(desktop1) {
+            margin-top: clamp-to(1440, 60, 80, 'px');
+        }
+    }
+
+    &__text-content {
+        @include from-breakpoint(tablet2) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    &__title {
+        font-family: $chillax;
+    }
+
+    &__text {
+        margin-top: 24px;
+        margin-bottom: 40px;
+
+        @include from-breakpoint(desktop1) {
+            margin-top: clamp-to(1440, 24, 32, 'px');
+            margin-bottom: clamp-to(1440, 40, 80, 'px');
+        }
+    }
+
+    &__second-row {
+        margin-top: 80px;
+
+        @include from-breakpoint(tablet2) {
+            justify-content: space-between;
+        }
+
+        @include from-breakpoint(desktop1) {
+            margin-top: clamp-to(1440, 60, 80, 'px');
+        }
+    }
+}
