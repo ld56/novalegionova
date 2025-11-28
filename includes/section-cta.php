@@ -6,7 +6,7 @@
                 <?php echo wp_get_attachment_image($args['data']['image']['id'], 'full', false, [
                     'class' => 'img cta__bg',
                     'loading' => 'lazy',
-                    'sizes' => '(max-width: 1279px) 100vw, 50vw',
+                    'sizes' => '(max-width: 1439px) 95vw, 1360px',
                 ]); ?>
             <?php endif; ?>
 
