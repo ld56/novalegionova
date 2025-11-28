@@ -1,0 +1,59 @@
+@use 'abstracts' as *;
+@use 'base/variables.scss' as *;
+
+.map {
+    &__left {
+        @include from-breakpoint(desktop1) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    &__heading {
+        font-family: $chillax;
+        line-height: fzlh(44, 60);
+    }
+
+    &__text {
+        margin: clamp-to(1280, 12, 20, 'px') 0 clamp-to(1280, 40, 60, 'px') 0;
+
+        @include from-breakpoint(desktop1) {
+            margin: clamp-to(1440, 20, 26, 'px') 0 clamp-to(1440, 60, 80, 'px');
+        }
+    }
+
+    &__ul {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        list-style-type: none;
+    }
+
+    &__li {
+        display: flex;
+        
+        &::before {
+            content: "";
+            position: relative;
+            display: inline-block;
+            background-image: url('../../dist/svg/dot.svg');
+            background-position: center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: 8px;
+            height: 8px;
+            transform: translateY(9px);
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+    }
+
+    &__btn {
+        margin-top: clamp-to(1280, 40, 50, 'px');
+
+        @include from-breakpoint(desktop1) {
+            margin-top: clamp-to(1440, 50, 80, 'px');
+        }
+    }
+}
