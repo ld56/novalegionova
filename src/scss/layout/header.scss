@@ -14,6 +14,11 @@
         height: $header-desktop;
     }
 
+    &--scrolled {
+        background-color: color('charcoal');
+        transition: background-color .3s ease-out;
+    }
+
     &__wrapper {
         display: flex;
         height: 100%;
