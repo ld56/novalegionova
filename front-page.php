@@ -22,6 +22,7 @@ get_header();?>
         'data' => get_fields()['cta2'],
         'mode' => 2
     ]);?>
+    <?php get_template_part('includes/section', 'about');?>
 
     <?php get_template_part('includes/section', 'galleries');?>
 </main>
