@@ -18,7 +18,7 @@
                     <?php echo wp_get_attachment_image(get_fields()['about']['first-row']['image']['id'], 'full', false, [
                         'class' => 'img about__img1',
                         'loading' => 'lazy',
-                        'sizes' => '(max-width: 1279px) 95vw, (max-width: 1439px) 40vw, 555px',
+                        'sizes' => '(max-width: 991px) 95vw, (max-width: 1439px) 40vw, 555px',
                     ]); ?>
                 <?php endif; ?>
             </div>
@@ -32,7 +32,7 @@
                     <?php echo wp_get_attachment_image(get_fields()['about']['second-row']['image1']['id'], 'full', false, [
                         'class' => 'img about__img2-1',
                         'loading' => 'lazy',
-                        'sizes' => '(max-width: 1279px) 95vw, (max-width: 1439px) 40vw, 576px',
+                        'sizes' => '(max-width: 991px) 95vw, (max-width: 1439px) 31vw, 440px',
                     ]); ?>
                 <?php endif; ?>
                 <div class="about__imgwrap-inside2">
@@ -40,14 +40,14 @@
                         <?php echo wp_get_attachment_image(get_fields()['about']['second-row']['image2']['id'], 'full', false, [
                             'class' => 'img about__img2-2',
                             'loading' => 'lazy',
-                            'sizes' => '(max-width: 1279px) 95vw, (max-width: 1439px) 40vw, 576px',
+                            'sizes' => '(max-width: 991px) 95vw, (max-width: 1439px) 31vw, 440px',
                         ]); ?>
                     <?php endif; ?>
                     <?php if (get_fields()['about']['second-row']['image3']) : ?>
                         <?php echo wp_get_attachment_image(get_fields()['about']['second-row']['image3']['id'], 'full', false, [
                             'class' => 'img about__img2-3',
                             'loading' => 'lazy',
-                            'sizes' => '(max-width: 1279px) 95vw, (max-width: 1439px) 40vw, 576px',
+                            'sizes' => '(max-width: 991px) 95vw, (max-width: 1439px) 31vw, 440px',
                         ]); ?>
                     <?php endif; ?>
                 </div>
