@@ -1,0 +1,233 @@
+@use 'abstracts' as *;
+
+.hidden-fields-container {
+    display: none;
+}
+
+.inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    // outline: 1px solid red;
+
+    @include from-breakpoint(tablet2) {
+        margin-top: clamp-to(1920, 40, 58, 'px');
+    }
+    
+    &__main {
+        display: flex;
+        flex-direction: column;
+        gap: clamp-to(992, 30, 40, 'px');
+    }
+    
+    &__split {
+        display: flex;
+        flex-direction: column;
+        gap: clamp-to(992, 30, 40, 'px');
+    
+        @include from-breakpoint(tablet2) {
+            flex-direction: row;
+        }
+    }
+    
+    &__cell {
+        display: flex;
+        flex-direction: column;
+    
+        & > p > br {
+            height: 0px!important;
+            display: none!important;
+        }
+    }
+    
+    &__input {
+        padding: 16px 16px;
+        color: color('charcoal');
+        background-color: transparent;
+        border: unset;
+        width: 100%;
+        transition: background-color .3s ease-out, outline .3s ease-out, opacity .3s ease-out;
+        border-bottom: 1px solid color('charcoal');
+        font-weight: 300;
+        border-radius: 0;
+        
+        @include from-breakpoint(desktop1) {
+            transition: border-color .2s ease-out;
+
+            &:hover {
+                border-color: color('accent2');
+            }    
+        }
+    
+        &::placeholder {
+            color: #7C7C7C;
+        }
+    
+        &:focus {
+            border-color: color('accent2');
+            outline: unset;
+        }
+
+        &:not(:placeholder-shown) {
+            border-color: color('accent2');
+        }
+    }
+
+    &__textarea {
+        resize: vertical;
+    }
+    
+    &__agreement {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        color: white;
+    }
+    
+    &__checkbox {
+        margin-top: 3px;
+        flex-shrink: 0;
+        width: fit-content;
+    }
+
+    // ==============
+
+    &__label,
+    &__input,
+    &__textarea {
+        display: block;
+        width: 100%;
+    }
+
+    & > div > form.failed > .wpcf7-response-output {
+        margin-top: clamp-to(1920, 14, 20, 'px');
+        color: tomato;
+    }
+
+    & > div > form.invalid > .wpcf7-response-output {
+        margin-top: clamp-to(1920, 14, 20, 'px');
+        color: tomato;
+    }
+
+    & > div > form.sent > .wpcf7-response-output {
+        margin-top: clamp-to(1920, 14, 20, 'px');
+        color: rgb(3, 162, 11);
+    }
+
+    & > div > form > .wpcf7-response-output {
+        margin-top: clamp-to(1920, 14, 20, 'px');
+        color: black;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        text-align: center;
+    }
+
+    &__submit {
+        width: 100%;
+    }
+}
+
+// ==================================
+
+.wpcf7-form-control-wrap {
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+
+.wpcf7-not-valid-tip {
+    margin-top: 2px;
+    color: tomato;
+    display: inline-block;
+    font-size: rem(14);
+
+    @include from-breakpoint(tablet2) {
+        margin: 5px 0 0 0;
+    }
+}
+
+.screen-reader-response {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+// Rozbicie contact__agreement, tak, aby checkbox i jego label były ładnie odseparowane
+
+.wpcf7-acceptance {
+    display: inline-block;
+    margin: 40px 0 30px 0;
+}
+
+.wpcf7-list-item > label {
+    display: flex;
+    align-items: center;
+}
+
+.wpcf7-list-item-label {
+    font-size: rem(12);
+    line-height: fzlh(10, 13);
+    display: block;
+    margin-left: 10px;
+    color: color('charcoal');
+    margin-top: 2px;
+    font-weight: 300;
+
+    & > a {
+        color: color('charcoal');
+    }
+}
+
+
+
+input[type="checkbox"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    /* Not removed via appearance */
+    margin: 0;
+    border: 1px solid color('gold');
+    margin-top: 2px;
+    font: inherit;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-0.075em);
+    border-radius: 0;
+    overflow: hidden;
+    display: grid;
+    place-content: center;
+    background-color: white;
+    transition: border-color .15s ease-out, background-color .6s cubic-bezier(0.25, 1, 0.5, 1);;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    aspect-ratio: 1/1;
+    width: 20px;
+    height: auto;
+    background-image: url('../svg/check.svg');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="checkbox"]:disabled {
+    --form-control-color: var(--form-control-disabled);
+    color: var(--form-control-disabled);
+    cursor: not-allowed;
+}

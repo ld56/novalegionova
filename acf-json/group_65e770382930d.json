@@ -186,6 +186,26 @@
                             "layout": "block",
                             "sub_fields": [
                                 {
+                                    "key": "field_692b656023141",
+                                    "label": "Imię i nazwisko osoby do kontaktu",
+                                    "name": "person-in-charge",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
                                     "key": "field_69293f09bd0c3",
                                     "label": "Numer telefonu",
                                     "name": "tel",
@@ -572,5 +592,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1764311221
+    "modified": 1764451698
 }

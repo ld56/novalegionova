@@ -23,8 +23,8 @@ get_header();?>
         'mode' => 2
     ]);?>
     <?php get_template_part('includes/section', 'about');?>
-
     <?php get_template_part('includes/section', 'galleries');?>
+    <?php get_template_part('includes/section', 'contact');?>
 </main>
 
 <?php get_footer(); ?>

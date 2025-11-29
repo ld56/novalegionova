@@ -1,0 +1,60 @@
+@use 'abstracts' as *;
+
+.sm-buttons {
+    display: flex;
+    gap: clamp-to(992, 8, 12, 'px');
+
+    @include from-breakpoint(tablet2) {
+        gap: clamp-to(1920, 12, 18, 'px');
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 1/1;
+        width: 40px;
+        height: auto;
+        border-radius: 14px;
+        background-color: color('accent');
+
+        @include from-breakpoint(desktop1) {
+            transition: background-color .2s ease-out, border-color .2s ease-out;
+
+            &:hover {
+                background-color: color('accent2');
+            }
+        }
+
+        &--footer {
+            width: 35px;
+            background-color: transparent;
+            border: 1px solid white;
+
+            @include from-breakpoint(desktop1) {
+                transition: background-color .2s ease-out;
+    
+                &:hover {
+                    background-color: color('gold');
+                    border-color: color('gold');
+    
+                    & > div {
+                        filter: filter('green');
+                    }
+                }
+            }
+        }
+    }
+
+    &__icon {
+        filter: filter('green');
+        aspect-ratio: 1/1;
+        width: 62%;
+        height: auto;
+
+        &--footer {
+            filter: filter('white');
+            width: 72%;
+        }
+    }
+}
